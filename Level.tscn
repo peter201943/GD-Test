@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Box.gd" type="Script" id=1]
+[ext_resource path="res://TestText.gd" type="Script" id=2]
 
 [sub_resource type="BoxShape" id=1]
 
@@ -20,18 +21,45 @@ metallic_specular = 0.59
 roughness = 0.65
 
 [node name="Level" type="Spatial"]
+__meta__ = {
+"_editor_description_": "A Very Simple test scene for putting stuff into."
+}
 
 [node name="Box" type="KinematicBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.37876, 0, 1.37713 )
 script = ExtResource( 1 )
+__meta__ = {
+"_editor_description_": "Simple box with simple components"
+}
 
 [node name="CollisionShape" type="CollisionShape" parent="Box"]
 shape = SubResource( 1 )
+__meta__ = {
+"_editor_description_": "Allows this box to collide with other things."
+}
 
 [node name="MeshInstance" type="MeshInstance" parent="Box/CollisionShape"]
 mesh = SubResource( 2 )
 skin = SubResource( 3 )
 material/0 = SubResource( 6 )
+__meta__ = {
+"_editor_description_": "Allows you to see the box."
+}
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 0.73424, 0.386936, -0.557829, 0, 0.821677, 0.569954, 0.678891, -0.418483, 0.603308, 0, 2.51063, 3.90777 )
+__meta__ = {
+"_editor_description_": "The Main Camera for this test - can you see the cube and the text?"
+}
+
+[node name="TestText" type="RichTextLabel" parent="."]
+margin_left = 31.0
+margin_top = 187.0
+margin_right = 776.0
+margin_bottom = 293.0
+text = "Hello. Can you read this?"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": "Simple Test of an In-Game Text Box."
+}
