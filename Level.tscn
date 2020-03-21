@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Box.gd" type="Script" id=1]
 [ext_resource path="res://TestText.gd" type="Script" id=2]
+[ext_resource path="res://AnotherBehavior.gd" type="Script" id=3]
 
 [sub_resource type="BoxShape" id=1]
 
@@ -45,6 +46,9 @@ material/0 = SubResource( 6 )
 __meta__ = {
 "_editor_description_": "Allows you to see the box."
 }
+
+[node name="AnotherItem" type="Node" parent="Box"]
+script = ExtResource( 3 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 0.73424, 0.386936, -0.557829, 0, 0.821677, 0.569954, 0.678891, -0.418483, 0.603308, 0, 2.51063, 3.90777 )
