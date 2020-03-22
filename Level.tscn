@@ -1,7 +1,29 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://StutteringBox.tscn" type="PackedScene" id=1]
 [ext_resource path="res://TestText.gd" type="Script" id=2]
+[ext_resource path="res://DeleteMe.gd" type="Script" id=4]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.101961, 0.72549, 0.27451, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color( 0.0117647, 0.2, 0.67451, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.109804, 0.945098, 0.0823529, 1 )
+
+[sub_resource type="GDScript" id=4]
+script/source = "extends Button
+
+func _ready():
+	pass
+
+"
 
 [node name="Level" type="Spatial"]
 __meta__ = {
@@ -29,9 +51,39 @@ __meta__ = {
 }
 
 [node name="TestMenu" type="Panel" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_right = 1019.0
+margin_bottom = 520.0
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": "A Panel to try pressing a button"
 }
+
+[node name="Label" type="Label" parent="TestMenu"]
+margin_left = 120.0
+margin_top = 128.0
+margin_right = 336.0
+margin_bottom = 150.0
+rect_scale = Vector2( 3.77778, 10.8333 )
+text = "Uh oh. You better not press this!!!"
+__meta__ = {
+"_editor_description_": "he he he"
+}
+
+[node name="Button" type="Button" parent="TestMenu"]
+material = SubResource( 1 )
+margin_left = 448.099
+margin_top = 364.892
+margin_right = 489.099
+margin_bottom = 384.892
+rect_scale = Vector2( 2.50471, 2.47445 )
+hint_tooltip = "AAAAAAAAAAAAAAAAAAAAAAAHHHHHHHHHHHHHHH!!!!!!!!!!!!!!!!!!!!!!!"
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_colors/font_color = Color( 0.894118, 0.0901961, 0.0901961, 1 )
+text = "do it"
+script = SubResource( 4 )
+__meta__ = {
+"_editor_description_": "OMG no! NOOOO!!!!!"
+}
+[connection signal="pressed" from="TestMenu/Button" to="TestMenu" method="_on_Button_pressed"]
