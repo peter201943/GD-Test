@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://AnotherBehavior.gd" type="Script" id=1]
+[ext_resource path="res://Box.gd" type="Script" id=2]
+[ext_resource path="res://TestMesh.tres" type="CubeMesh" id=3]
+
+[sub_resource type="BoxShape" id=1]
+
+[sub_resource type="Skin" id=2]
+
+[sub_resource type="Gradient" id=3]
+
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_color = Color( 0.188235, 0.592157, 0.882353, 1 )
+albedo_texture = SubResource( 4 )
+metallic_specular = 0.59
+roughness = 0.65
+
+[sub_resource type="BoxShape" id=6]
+
+[node name="StutteringBox" type="KinematicBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.37876, 0, 1.37713 )
+script = ExtResource( 2 )
+__meta__ = {
+"_editor_description_": "Simple box with simple components"
+}
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 1 )
+__meta__ = {
+"_editor_description_": "Allows this box to collide with other things."
+}
+
+[node name="MeshInstance3" type="MeshInstance" parent="CollisionShape"]
+mesh = ExtResource( 3 )
+skin = SubResource( 2 )
+material/0 = SubResource( 5 )
+__meta__ = {
+"_editor_description_": "Allows you to see the box."
+}
+
+[node name="AnotherItem" type="Node" parent="."]
+script = ExtResource( 1 )
+__meta__ = {
+"_editor_description_": "How do we attach more scripts?"
+}
+
+[node name="CollisionShape2" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.772616, 0.734146, -0.958943 )
+shape = SubResource( 6 )
+__meta__ = {
+"_editor_description_": "Testing intersection and parenting of nodes"
+}
+
+[node name="MeshInstance2" type="MeshInstance" parent="CollisionShape2"]
+mesh = ExtResource( 3 )
+skin = SubResource( 2 )
+material/0 = SubResource( 5 )
+__meta__ = {
+"_editor_description_": "Allows you to see the box."
+}
