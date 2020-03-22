@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "KinematicBody",
 "class": "SimpleTest",
 "language": "GDScript",
-"path": "res://Box.gd"
+"path": "res://Scripts/Box.gd"
 } ]
 _global_script_class_icons={
 "SimpleTest": ""
@@ -21,9 +21,9 @@ _global_script_class_icons={
 [application]
 
 config/name="Test"
-run/main_scene="res://Level.tscn"
-config/icon="res://icon.png"
+run/main_scene="res://Scenes/Level.tscn"
+config/icon="res://Misc/icon.png"
 
 [rendering]
 
-environment/default_environment="res://default_env.tres"
+environment/default_environment="res://Misc/default_env.tres"

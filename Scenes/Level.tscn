@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://StutteringBox.tscn" type="PackedScene" id=1]
-[ext_resource path="res://TestText.gd" type="Script" id=2]
-[ext_resource path="res://DeleteMe.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/DeleteMe.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/SideMenu.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/TestText.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/StutteringBox.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -25,12 +26,18 @@ func _ready():
 
 "
 
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.466667, 0.0431373, 0.0431373, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.823529, 0.105882, 0.105882, 1 )
+
 [node name="Level" type="Spatial"]
 __meta__ = {
 "_editor_description_": "A Very Simple test scene for putting stuff into."
 }
 
-[node name="StutteringBox" parent="." instance=ExtResource( 1 )]
+[node name="StutteringBox" parent="." instance=ExtResource( 4 )]
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 0.73424, 0.386936, -0.557829, 0, 0.821677, 0.569954, 0.678891, -0.418483, 0.603308, 0, 2.51063, 3.90777 )
@@ -44,7 +51,7 @@ margin_top = 187.0
 margin_right = 776.0
 margin_bottom = 293.0
 text = "Hello. Can you read this?"
-script = ExtResource( 2 )
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": "Simple Test of an In-Game Text Box."
@@ -53,7 +60,7 @@ __meta__ = {
 [node name="TestMenu" type="Panel" parent="."]
 margin_right = 1019.0
 margin_bottom = 520.0
-script = ExtResource( 4 )
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": "A Panel to try pressing a button"
@@ -85,5 +92,32 @@ text = "do it"
 script = SubResource( 4 )
 __meta__ = {
 "_editor_description_": "OMG no! NOOOO!!!!!"
+}
+
+[node name="SideMenu" type="Panel" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 4.15308, 12.9059 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="SideMenu"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "YORPS"
+
+[node name="Button" type="Button" parent="SideMenu"]
+margin_left = 1.86758
+margin_top = 31.5945
+margin_right = 36.8676
+margin_bottom = 51.5945
+rect_scale = Vector2( 1, 0.383229 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+text = "yup"
+__meta__ = {
+"_edit_use_anchors_": false
 }
 [connection signal="pressed" from="TestMenu/Button" to="TestMenu" method="_on_Button_pressed"]
