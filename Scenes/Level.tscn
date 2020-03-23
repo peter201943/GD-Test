@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scripts/DeleteMe.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/SideMenu.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Scripts/SayHello!.gd" type="Script" id=5]
 [ext_resource path="res://Misc/FiraCode-Regular.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://Scripts/TIMER.gd" type="Script" id=7]
+[ext_resource path="res://Scenes/boid swarm.tscn" type="PackedScene" id=8]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -149,4 +150,6 @@ script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="boid swarm" parent="." instance=ExtResource( 8 )]
 [connection signal="pressed" from="TestMenu/Button" to="TestMenu" method="_on_Button_pressed"]
