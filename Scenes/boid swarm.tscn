@@ -7,3 +7,13 @@
 [node name="BOID BODY" parent="." groups=[
 "boids",
 ] instance=ExtResource( 1 )]
+
+[node name="BOID BODY2" parent="." groups=[
+"boids",
+] instance=ExtResource( 1 )]
+transform = Transform( 0.3, 0, 0, 0, 0.417577, 0, 0, 0, 0.3, 0.309373, -0.460292, -1.05181 )
+
+[node name="BOID BODY3" parent="." groups=[
+"boids",
+] instance=ExtResource( 1 )]
+transform = Transform( 0.3, 0, 0, 0, 0.417577, 0, 0, 0, 0.3, 0.840998, 0.325621, 0 )

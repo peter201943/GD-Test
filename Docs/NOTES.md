@@ -11,3 +11,6 @@
  - https://godotengine.org/qa/2539/how-would-i-go-about-picking-a-random-number
  - https://godotengine.org/qa/39679/can-i-play-sounds-using-the-animationplayer
  - https://godotengine.org/qa/18139/how-can-i-play-mp3-file
+ - https://godotengine.org/qa/7042/wait-like-function
+ - https://www.reddit.com/r/godot/comments/7xclq9/failing_to_understand_yield/
+ - https://www.youtube.com/watch?v=4Dj6vaatONI
