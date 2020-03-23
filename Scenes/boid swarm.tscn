@@ -9,6 +9,7 @@
 [node name="BOID BODY" parent="Sub Swarm 1" groups=[
 "boids",
 ] instance=ExtResource( 1 )]
+transform = Transform( 0.260191, -0.152003, 0.101859, 0.0521162, 0.359344, 0.143651, -0.139944, -0.148788, 0.242877, 0, 0, 0 )
 
 [node name="BOID BODY2" parent="Sub Swarm 1" groups=[
 "boids",
@@ -18,7 +19,7 @@ transform = Transform( 0.3, 0, 0, 0, 0.417577, 0, 0, 0, 0.3, 0.309373, -0.460292
 [node name="BOID BODY3" parent="Sub Swarm 1" groups=[
 "boids",
 ] instance=ExtResource( 1 )]
-transform = Transform( 0.3, 0, 0, 0, 0.417577, 0, 0, 0, 0.3, 0.840998, 0.325621, 0 )
+transform = Transform( 0.206187, 0.303321, 0, -0.217915, 0.286997, 0, 0, 0, 0.3, 0.840998, 0.325621, 0 )
 
 [node name="Sub Swarm 2" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.37275, 0, 2.31063 )
@@ -26,16 +27,17 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.37275, 0, 2.31063 )
 [node name="BOID BODY" parent="Sub Swarm 2" groups=[
 "boids",
 ] instance=ExtResource( 1 )]
+transform = Transform( 0.118947, -0.383352, 0, 0.275412, 0.165565, 0, 0, 0, 0.3, 0, 0, 0 )
 
 [node name="BOID BODY2" parent="Sub Swarm 2" groups=[
 "boids",
 ] instance=ExtResource( 1 )]
-transform = Transform( 0.3, 0, 0, 0, 0.417577, 0, 0, 0, 0.3, 0.309373, -0.460292, -1.05181 )
+transform = Transform( 0.183353, -0.172623, 0.202488, 0.168079, 0.345885, 0, -0.167724, 0.157909, 0.221356, 0.309372, -0.460292, -1.05181 )
 
 [node name="BOID BODY3" parent="Sub Swarm 2" groups=[
 "boids",
 ] instance=ExtResource( 1 )]
-transform = Transform( 0.3, 0, 0, 0, 0.417577, 0, 0, 0, 0.3, 0.840998, 0.325621, 0 )
+transform = Transform( 0.250215, -0.230373, 0, 0.0715184, 0.150498, -0.270545, 0.149257, 0.314085, 0.129635, 0.840998, 0.325621, 0 )
 
 [node name="Sub Swarm 3" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.276045, 0.253899, 9.55738 )

@@ -14,3 +14,4 @@
  - https://godotengine.org/qa/7042/wait-like-function
  - https://www.reddit.com/r/godot/comments/7xclq9/failing_to_understand_yield/
  - https://www.youtube.com/watch?v=4Dj6vaatONI
+ - http://codetuto.com/2016/01/godot-engine-movement-and-rotation-basics/

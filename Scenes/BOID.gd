@@ -13,7 +13,7 @@ extends KinematicBody
 
 const MAX_PEERS := 5
 const PEER_RANGE := 0.5
-const MOVE_SPEED := 5
+const MOVE_SPEED := 0.5
 const SQUAWK_MODE := "_peer_squawk"
 
 
@@ -65,6 +65,10 @@ func _get_flock_direction() -> void:
 	direction = Vector3(0,0,0)
 	for boid in peers:
 		direction += boid.direction
+	direction = direction.normalized()
+	direction.x = direction.x * MOVE_SPEED
+	direction.y = direction.y * MOVE_SPEED
+	direction.z = direction.z * MOVE_SPEED
 
 
 func _get_peers() -> void:
@@ -80,7 +84,7 @@ func _get_peers() -> void:
 func _set_direction() -> void:
 	# Moves the boid in the specified direction
 	# Also rotates the body
-	pass
+	direction = self.move_and_slide(direction)
 
 
 func _random_squawk() -> void:
