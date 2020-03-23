@@ -14,6 +14,7 @@ extends KinematicBody
 const MAX_PEERS := 5
 const PEER_RANGE := 10
 const MOVE_SPEED := 5
+const SQUAWK_MODE := "_peer_squawk"
 
 
 
@@ -29,33 +30,46 @@ func _ready() -> void:
 	# Boid needs to find other boids (assume no more boids are dynamically added)
 	squawk_timer.set_wait_time(0.1)
 	squawk_timer.set_one_shot(true)
-	squawk_timer.connect("timeout",self,"_swarm_squawk")
+	squawk_timer.connect("timeout",self,SQUAWK_MODE)
 	self.add_child(squawk_timer)
 	add_to_group("boids")
 	self._squawk()
 
+
 func _process(delta) -> void:
 	# Boid is updated every frame
-	_boid_behavior()
+	_boid_comm_behavior()
+
+
+func _physics_process(delta):
+	# Boid Distances/Groups updated every physics frame
+	_boid_phys_behavior()
 
 
 
 
-func _boid_behavior() -> void:
+func _boid_phys_behavior() -> void:
+		# Boid physics behavior is also a complex set
+		_get_peers()
+		_get_flock_direction()
+		_set_direction()
+
+
+func _boid_comm_behavior() -> void:
 	# Boid behavior is complex set of smaller behaviors
-	_get_peers()
-	_get_flock_direction()
-	_set_direction()
 	_random_squawk()
 
 
 func _get_flock_direction() -> void:
 	# For all the nearby boids, get their normal, and sum the normals to get this boid's new direction
+	direction = Vector3(0,0,0)
 	for boid in peers:
 		direction += boid.direction
 
 
 func _get_peers() -> void:
+	# Find all nearby boids/refresh
+	peers = []
 	var temp_peers = get_tree().get_nodes_in_group("boids")
 	for boid in temp_peers:
 		if (Vector3(self.translation - boid.translation).length() < PEER_RANGE):
@@ -81,6 +95,13 @@ func _swarm_squawk():
 	# Makes the rest of the swarm squawk in response
 	print(" ")
 	get_tree().call_group("boids","_squawk")
+
+
+func _peer_squawk():
+	# Only the nearby boids squawk in response
+	print("PEER SQUAWK")
+	for boid in peers:
+		boid._squawk()
 
 
 func _squawk() -> void:
