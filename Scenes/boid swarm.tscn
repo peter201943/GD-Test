@@ -1,24 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Misc/tile.png" type="Texture" id=1]
-
-[sub_resource type="CylinderShape" id=1]
-
-[sub_resource type="SpatialMaterial" id=2]
-flags_unshaded = true
-albedo_texture = ExtResource( 1 )
-
-[sub_resource type="CylinderMesh" id=3]
-material = SubResource( 2 )
+[ext_resource path="res://Scenes/Boid.tscn" type="PackedScene" id=1]
 
 [node name="boid swarm" type="Node"]
 
-[node name="BOID BODY" type="KinematicBody" parent="."]
-
-[node name="BOID COLLIDER" type="CollisionShape" parent="BOID BODY"]
-shape = SubResource( 1 )
-
-[node name="BOID MESH" type="MeshInstance" parent="BOID BODY/BOID COLLIDER"]
-cast_shadow = 0
-mesh = SubResource( 3 )
-material/0 = null
+[node name="BOID BODY" parent="." groups=[
+"boids",
+] instance=ExtResource( 1 )]

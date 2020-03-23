@@ -10,11 +10,17 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "KinematicBody",
+"class": "Boid",
+"language": "GDScript",
+"path": "res://Scenes/BOID.gd"
+}, {
+"base": "KinematicBody",
 "class": "SimpleTest",
 "language": "GDScript",
 "path": "res://Scripts/Box.gd"
 } ]
 _global_script_class_icons={
+"Boid": "",
 "SimpleTest": ""
 }
 
