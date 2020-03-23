@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/02 Outerlimits.ogg-1b8ca3696e7dfe61f5e8aa3a752dd97a.oggstr"
+
+[deps]
+
+source_file="res://Misc/02 Outerlimits.ogg"
+dest_files=[ "res://.import/02 Outerlimits.ogg-1b8ca3696e7dfe61f5e8aa3a752dd97a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

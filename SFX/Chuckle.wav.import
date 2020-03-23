@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/Chuckle.wav-705159a0e427417366f7c35e57f802b6.sample"
+path="res://.import/Chuckle.wav-28129f6476b31cbbdeac05cbc8df01a2.sample"
 
 [deps]
 
-source_file="res://Misc/Chuckle.wav"
-dest_files=[ "res://.import/Chuckle.wav-705159a0e427417366f7c35e57f802b6.sample" ]
+source_file="res://SFX/Chuckle.wav"
+dest_files=[ "res://.import/Chuckle.wav-28129f6476b31cbbdeac05cbc8df01a2.sample" ]
 
 [params]
 

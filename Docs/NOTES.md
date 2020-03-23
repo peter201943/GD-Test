@@ -10,3 +10,4 @@
  - https://www.reddit.com/r/godot/comments/66zk7c/enter_tree_vs_ready_etc_are_there_rules_of_thumb/
  - https://godotengine.org/qa/2539/how-would-i-go-about-picking-a-random-number
  - https://godotengine.org/qa/39679/can-i-play-sounds-using-the-animationplayer
+ - https://godotengine.org/qa/18139/how-can-i-play-mp3-file

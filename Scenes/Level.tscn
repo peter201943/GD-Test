@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scripts/DeleteMe.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/SideMenu.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Misc/FiraCode-Regular.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://Scripts/TIMER.gd" type="Script" id=7]
 [ext_resource path="res://Scenes/boid swarm.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Misc/02 Outerlimits.ogg" type="AudioStream" id=9]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -152,4 +153,9 @@ __meta__ = {
 }
 
 [node name="boid swarm" parent="." instance=ExtResource( 8 )]
+
+[node name="muzak" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -8.0
+autoplay = true
 [connection signal="pressed" from="TestMenu/Button" to="TestMenu" method="_on_Button_pressed"]
