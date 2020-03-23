@@ -12,7 +12,7 @@ extends KinematicBody
 
 
 const MAX_PEERS := 5
-const PEER_RANGE := 10
+const PEER_RANGE := 0.5
 const MOVE_SPEED := 5
 const SQUAWK_MODE := "_peer_squawk"
 
@@ -74,6 +74,7 @@ func _get_peers() -> void:
 	for boid in temp_peers:
 		if (Vector3(self.translation - boid.translation).length() < PEER_RANGE):
 			peers.append(boid)
+	#print("PEERS: " + str(len(peers)))
 
 
 func _set_direction() -> void:
@@ -99,7 +100,7 @@ func _swarm_squawk():
 
 func _peer_squawk():
 	# Only the nearby boids squawk in response
-	print("PEER SQUAWK")
+	print(" ")
 	for boid in peers:
 		boid._squawk()
 
