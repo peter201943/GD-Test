@@ -49,7 +49,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.276045, 0.253899, 9.55738 )
 [node name="BOID BODY2" parent="Sub Swarm 3" groups=[
 "boids",
 ] instance=ExtResource( 1 )]
-transform = Transform( 0.3, 0, 0, 0, 0.417577, 0, 0, 0, 0.3, 0.309373, -0.460292, -1.05181 )
+transform = Transform( 0.3, 0, 0, 0, 0.417577, 0, 0, 0, 0.3, 0.309373, -0.460292, -0.782651 )
 
 [node name="BOID BODY3" parent="Sub Swarm 3" groups=[
 "boids",

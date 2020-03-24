@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "KinematicBody",
 "class": "Boid",
 "language": "GDScript",
-"path": "res://Scenes/BOID.gd"
+"path": "res://Scripts/BOID.gd"
 }, {
 "base": "KinematicBody",
 "class": "SimpleTest",
@@ -27,7 +27,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Test"
-run/main_scene="res://Scenes/Level.tscn"
+run/main_scene="res://Scenes/NewLevel.tscn"
 config/icon="res://Misc/icon.png"
 
 [rendering]

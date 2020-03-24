@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scripts/DeleteMe.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/SideMenu.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Scripts/TIMER.gd" type="Script" id=7]
 [ext_resource path="res://Scenes/boid swarm.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Misc/02 Outerlimits.ogg" type="AudioStream" id=9]
+[ext_resource path="res://Scripts/random nums.gd" type="Script" id=10]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -51,7 +52,7 @@ __meta__ = {
 [node name="StutteringBox" parent="." instance=ExtResource( 4 )]
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 0.73424, 0.386936, -0.557829, 0, 0.821677, 0.569954, 0.678891, -0.418483, 0.603308, 0, 2.51063, 3.90777 )
+transform = Transform( 0.73424, 0.386936, -0.557829, 0, 0.821677, 0.569954, 0.678891, -0.418483, 0.603307, -4.36326, 7.62608, 9.05957 )
 __meta__ = {
 "_editor_description_": "The Main Camera for this test - can you see the cube and the text?"
 }
@@ -158,4 +159,7 @@ __meta__ = {
 stream = ExtResource( 9 )
 volume_db = -8.0
 autoplay = true
+
+[node name="random nums" type="Node" parent="."]
+script = ExtResource( 10 )
 [connection signal="pressed" from="TestMenu/Button" to="TestMenu" method="_on_Button_pressed"]
