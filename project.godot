@@ -27,7 +27,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Test"
-run/main_scene="res://Scenes/NewLevel.tscn"
+run/main_scene="res://Scenes/Level3.tscn"
 config/icon="res://Misc/icon.png"
 
 [rendering]

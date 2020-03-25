@@ -1,0 +1,103 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Misc/Font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scripts/Apple.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Pear.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.0431373, 0.541176, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.94902, 0.0588235, 0.0588235, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.670588, 0.964706, 0.0941176, 1 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScreenBack" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -508.696
+margin_top = -302.428
+margin_right = -468.696
+margin_bottom = -262.428
+rect_scale = Vector2( 25.4806, 15.1537 )
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_editor_description_": "Background of this screen
+https://godotengine.org/qa/12842/how-do-i-change-the-background-colour-of-a-panel-node"
+}
+
+[node name="ScreenName" type="Label" parent="."]
+margin_left = 6.34674
+margin_top = 7.9334
+margin_right = 96.3467
+margin_bottom = 45.9334
+custom_fonts/font = ExtResource( 1 )
+text = "Test Screen"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": "Name of this screen"
+}
+
+[node name="ScreenName2" type="Label" parent="."]
+margin_left = 6.34674
+margin_top = 7.9334
+margin_right = 204.347
+margin_bottom = 45.9334
+custom_fonts/font = ExtResource( 1 )
+text = "Test Screen"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": "Name of this screen"
+}
+
+[node name="ApplePanel" type="Panel" parent="."]
+margin_left = 58.9315
+margin_top = 248.003
+margin_right = 98.9315
+margin_bottom = 288.003
+rect_scale = Vector2( 4.15037, 3.18999 )
+custom_styles/panel = SubResource( 2 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AppleLabel" type="Label" parent="ApplePanel"]
+margin_right = 40.0
+margin_bottom = 14.0
+rect_scale = Vector2( 0.277294, 0.420045 )
+custom_fonts/font = ExtResource( 1 )
+text = "Apples"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PearPanel" type="Panel" parent="."]
+margin_left = 703.494
+margin_top = 246.775
+margin_right = 743.494
+margin_bottom = 286.775
+rect_scale = Vector2( 4.15037, 3.18999 )
+custom_styles/panel = SubResource( 3 )
+script = ExtResource( 3 )
+
+[node name="PearLabel" type="Label" parent="PearPanel"]
+margin_right = 40.0
+margin_bottom = 14.0
+rect_scale = Vector2( 0.35421, 0.34481 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Pears"
+__meta__ = {
+"_edit_use_anchors_": false
+}

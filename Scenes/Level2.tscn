@@ -1,20 +1,20 @@
 [gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://Textures/fix big aaaaaaaaah.png" type="Texture" id=1]
-[ext_resource path="res://Scenes/Boid.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scripts/BOID.gd" type="Script" id=3]
-[ext_resource path="res://Scripts/Squawk.gd" type="Script" id=4]
-[ext_resource path="res://SFX/Chuckle.wav" type="AudioStream" id=5]
+[ext_resource path="res://Scenes/Boid.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/Squawk.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/BoidCount.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/FrameCount.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/BOID.gd" type="Script" id=5]
 [ext_resource path="res://Misc/FiraCode-Regular.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://Scripts/TimeCount.gd" type="Script" id=7]
-[ext_resource path="res://Scripts/FrameCount.gd" type="Script" id=8]
-[ext_resource path="res://Scripts/BoidCount.gd" type="Script" id=9]
+[ext_resource path="res://SFX/Chuckle.wav" type="AudioStream" id=8]
+[ext_resource path="res://Textures/fix big aaaaaaaaah.png" type="Texture" id=9]
 
 [sub_resource type="CylinderShape" id=1]
 
 [sub_resource type="SpatialMaterial" id=2]
 flags_unshaded = true
-albedo_texture = ExtResource( 1 )
+albedo_texture = ExtResource( 9 )
 
 [sub_resource type="CylinderMesh" id=3]
 material = SubResource( 2 )
@@ -37,7 +37,7 @@ outline_size = 2
 outline_color = Color( 0.129412, 0.74902, 0.917647, 1 )
 font_data = ExtResource( 6 )
 
-[node name="Level" type="Spatial"]
+[node name="Level 2" type="Spatial"]
 __meta__ = {
 "_editor_description_": "Tests Spawning TONS of crap."
 }
@@ -56,7 +56,7 @@ __meta__ = {
 "boids",
 ]]
 transform = Transform( 0.260191, -0.152003, 0.101859, 0.0521162, 0.359344, 0.143651, -0.139944, -0.148788, 0.242877, 0, 0, 0 )
-script = ExtResource( 3 )
+script = ExtResource( 5 )
 age = 1
 
 [node name="BOID COLLIDER" type="CollisionShape" parent="boid swarm/Sub Swarm 1/BOID BODY"]
@@ -68,19 +68,19 @@ mesh = SubResource( 3 )
 material/0 = null
 
 [node name="BOID SQUAWK" type="AudioStreamPlayer3D" parent="boid swarm/Sub Swarm 1/BOID BODY"]
-stream = ExtResource( 5 )
+stream = ExtResource( 8 )
 unit_db = 32.0
-script = ExtResource( 4 )
+script = ExtResource( 2 )
 
 [node name="BOID BODY2" parent="boid swarm/Sub Swarm 1" groups=[
 "boids",
-] instance=ExtResource( 2 )]
+] instance=ExtResource( 1 )]
 transform = Transform( 0.3, 0, 0, 0, 0.417577, 0, 0, 0, 0.3, 0.309373, -0.460292, -1.05181 )
 age = 1
 
 [node name="BOID BODY3" parent="boid swarm/Sub Swarm 1" groups=[
 "boids",
-] instance=ExtResource( 2 )]
+] instance=ExtResource( 1 )]
 transform = Transform( 0.206187, 0.303321, 0, -0.217915, 0.286997, 0, 0, 0, 0.3, 0.840998, 0.325621, 0 )
 age = 1
 
@@ -89,18 +89,18 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.37275, 0, 2.31063 )
 
 [node name="BOID BODY" parent="boid swarm/Sub Swarm 2" groups=[
 "boids",
-] instance=ExtResource( 2 )]
+] instance=ExtResource( 1 )]
 transform = Transform( 0.118947, -0.383352, 0, 0.275412, 0.165565, 0, 0, 0, 0.3, 0, 0, 0 )
 age = 1
 
 [node name="BOID BODY2" parent="boid swarm/Sub Swarm 2" groups=[
 "boids",
-] instance=ExtResource( 2 )]
+] instance=ExtResource( 1 )]
 transform = Transform( 0.183353, -0.172623, 0.202488, 0.168079, 0.345885, 0, -0.167724, 0.157909, 0.221356, 0.309372, -0.460292, -1.05181 )
 
 [node name="BOID BODY3" parent="boid swarm/Sub Swarm 2" groups=[
 "boids",
-] instance=ExtResource( 2 )]
+] instance=ExtResource( 1 )]
 transform = Transform( 0.250215, -0.230373, 0, 0.0715184, 0.150498, -0.270545, 0.149257, 0.314085, 0.129635, 0.840998, 0.325621, 0 )
 age = 1
 
@@ -109,18 +109,18 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.276045, 0.253899, 9.55738 )
 
 [node name="BOID BODY" parent="boid swarm/Sub Swarm 3" groups=[
 "boids",
-] instance=ExtResource( 2 )]
+] instance=ExtResource( 1 )]
 age = 1
 
 [node name="BOID BODY2" parent="boid swarm/Sub Swarm 3" groups=[
 "boids",
-] instance=ExtResource( 2 )]
+] instance=ExtResource( 1 )]
 transform = Transform( 0.3, 0, 0, 0, 0.417577, 0, 0, 0, 0.3, 0.309373, -0.460292, -0.782651 )
 age = 2
 
 [node name="BOID BODY3" parent="boid swarm/Sub Swarm 3" groups=[
 "boids",
-] instance=ExtResource( 2 )]
+] instance=ExtResource( 1 )]
 transform = Transform( 0.3, 0, 0, 0, 0.417577, 0, 0, 0, 0.3, 0.840998, 0.325621, 0 )
 age = 1
 
@@ -134,7 +134,7 @@ margin_bottom = 739.503
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.32549, 0.909804, 0.152941, 1 )
 text = "00..."
-script = ExtResource( 8 )
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": "Measure framedrop"
@@ -162,7 +162,7 @@ margin_bottom = 682.942
 custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0.0901961, 0.301961, 0.941176, 1 )
 text = "000"
-script = ExtResource( 9 )
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": "Measure Delay, in milliseconds"

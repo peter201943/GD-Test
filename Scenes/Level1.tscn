@@ -1,15 +1,15 @@
 [gd_scene load_steps=18 format=2]
 
-[ext_resource path="res://Scripts/DeleteMe.gd" type="Script" id=1]
-[ext_resource path="res://Scripts/SideMenu.gd" type="Script" id=2]
-[ext_resource path="res://Scripts/TestText.gd" type="Script" id=3]
-[ext_resource path="res://Scenes/StutteringBox.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scripts/SayHello!.gd" type="Script" id=5]
-[ext_resource path="res://Misc/FiraCode-Regular.ttf" type="DynamicFontData" id=6]
-[ext_resource path="res://Scripts/TIMER.gd" type="Script" id=7]
-[ext_resource path="res://Scenes/boid swarm.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scripts/SayHello!.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/random nums.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/TIMER.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/boid swarm.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/StutteringBox.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/DeleteMe.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/SideMenu.gd" type="Script" id=7]
+[ext_resource path="res://Scripts/TestText.gd" type="Script" id=8]
 [ext_resource path="res://Misc/02 Outerlimits.ogg" type="AudioStream" id=9]
-[ext_resource path="res://Scripts/random nums.gd" type="Script" id=10]
+[ext_resource path="res://Misc/FiraCode-Regular.ttf" type="DynamicFontData" id=10]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -42,14 +42,14 @@ bg_color = Color( 0.823529, 0.105882, 0.105882, 1 )
 size = 64
 outline_size = 2
 outline_color = Color( 0.960784, 0.239216, 0.0745098, 1 )
-font_data = ExtResource( 6 )
+font_data = ExtResource( 10 )
 
-[node name="Level" type="Spatial"]
+[node name="Level1" type="Spatial"]
 __meta__ = {
 "_editor_description_": "A Very Simple test scene for putting stuff into."
 }
 
-[node name="StutteringBox" parent="." instance=ExtResource( 4 )]
+[node name="StutteringBox" parent="." instance=ExtResource( 5 )]
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 0.73424, 0.386936, -0.557829, 0, 0.821677, 0.569954, 0.678891, -0.418483, 0.603307, -4.36326, 7.62608, 9.05957 )
@@ -63,7 +63,7 @@ margin_top = 187.0
 margin_right = 776.0
 margin_bottom = 293.0
 text = "Hello. Can you read this?"
-script = ExtResource( 3 )
+script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": "Simple Test of an In-Game Text Box."
@@ -72,7 +72,7 @@ __meta__ = {
 [node name="TestMenu" type="Panel" parent="."]
 margin_right = 1019.0
 margin_bottom = 520.0
-script = ExtResource( 1 )
+script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": "A Panel to try pressing a button"
@@ -110,7 +110,7 @@ __meta__ = {
 margin_right = 40.0
 margin_bottom = 40.0
 rect_scale = Vector2( 4.15308, 12.9059 )
-script = ExtResource( 2 )
+script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -134,7 +134,7 @@ __meta__ = {
 }
 
 [node name="SayHello!" type="Node" parent="."]
-script = ExtResource( 5 )
+script = ExtResource( 1 )
 __meta__ = {
 "_editor_description_": "testing _process."
 }
@@ -148,12 +148,12 @@ custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0.945098, 0.0941176, 0.968627, 1 )
 custom_colors/font_outline_modulate = Color( 0.92549, 0.329412, 0.113725, 1 )
 text = "00.00"
-script = ExtResource( 7 )
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="boid swarm" parent="." instance=ExtResource( 8 )]
+[node name="boid swarm" parent="." instance=ExtResource( 4 )]
 
 [node name="muzak" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
@@ -161,5 +161,5 @@ volume_db = -8.0
 autoplay = true
 
 [node name="random nums" type="Node" parent="."]
-script = ExtResource( 10 )
+script = ExtResource( 2 )
 [connection signal="pressed" from="TestMenu/Button" to="TestMenu" method="_on_Button_pressed"]
