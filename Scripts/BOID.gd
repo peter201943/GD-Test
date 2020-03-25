@@ -13,7 +13,7 @@ extends KinematicBody
 
 const MAX_PEERS := 3
 const PEER_RANGE := 0.5
-const MOVE_SPEED := 20
+const MOVE_SPEED := 202
 const ANGLE_SMOOTH := 0.02
 const SQUAWK_MODE := "_peer_squawk"
 const SPEED_CUTOFF := 2
@@ -21,7 +21,7 @@ const SPEED_WAIT := 0.1
 const MAX_AGE := 3
 const SPAWN_SIZE := 2
 const SPAWN_TIME := 2.5
-const SPAWN_CHANCE := 0.2
+const SPAWN_CHANCE := 0.03
 
 
 
@@ -177,20 +177,21 @@ func _age():
 func _spawn():
 	# Spawn more boids
 	if (age > SPAWN_TIME):
-		var chance = randi()%10+1
-		var percent_chance = chance / 10.0
-		print("Try Spawn")
-		print("CHANCE @" + str(chance))
-		print("PERCENT @" + str(percent_chance))
-		if (age < MAX_AGE) and (not spawned) and (percent_chance <= SPAWN_CHANCE):
-			print("Yep\n")
-			var new_boid = null
-			for boids in SPAWN_SIZE:
-				new_boid = boid_scene.instance()
-				self.get_parent().add_child(new_boid)
-			spawned = true
-		else:
-			print("Nope\n")
+		var chance = randi()%100+1
+		var percent_chance = chance / 100.0
+		#print("Try Spawn")
+		#print("CHANCE @" + str(chance))
+		#print("PERCENT @" + str(percent_chance))
+		if (age < MAX_AGE) and (not spawned):
+			if (percent_chance <= SPAWN_CHANCE):
+				print("Yep @" + str(percent_chance))
+				var new_boid = null
+				for boids in SPAWN_SIZE:
+					new_boid = boid_scene.instance()
+					self.get_parent().add_child(new_boid)
+				spawned = true
+			else:
+				print("---")
 
 
 func _bad_spawn():
