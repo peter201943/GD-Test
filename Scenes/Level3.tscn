@@ -1,14 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Misc/Font.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Scripts/Apple.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/ApplePanel.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/Pear.gd" type="Script" id=3]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.0431373, 0.541176, 0, 1 )
-
-[sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.94902, 0.0588235, 0.0588235, 1 )
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.670588, 0.964706, 0.0941176, 1 )
@@ -60,27 +57,7 @@ __meta__ = {
 "_editor_description_": "Name of this screen"
 }
 
-[node name="ApplePanel" type="Panel" parent="."]
-margin_left = 58.9315
-margin_top = 248.003
-margin_right = 98.9315
-margin_bottom = 288.003
-rect_scale = Vector2( 4.15037, 3.18999 )
-custom_styles/panel = SubResource( 2 )
-script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="AppleLabel" type="Label" parent="ApplePanel"]
-margin_right = 40.0
-margin_bottom = 14.0
-rect_scale = Vector2( 0.277294, 0.420045 )
-custom_fonts/font = ExtResource( 1 )
-text = "Apples"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="ApplePanel" parent="." instance=ExtResource( 2 )]
 
 [node name="PearPanel" type="Panel" parent="."]
 margin_left = 703.494

@@ -2,7 +2,7 @@
 
 
 
-class_name Boid
+class_name Boid, "res://Misc/icon.png"
 extends KinematicBody
 # Boid moves and groups a collection of objects together
 # Used to learn Godot's `Groups`

@@ -20,7 +20,7 @@ _global_script_classes=[ {
 "path": "res://Scripts/Box.gd"
 } ]
 _global_script_class_icons={
-"Boid": "",
+"Boid": "res://Misc/icon.png",
 "SimpleTest": ""
 }
 

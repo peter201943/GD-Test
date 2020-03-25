@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Misc/Font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scripts/Apple.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.94902, 0.0588235, 0.0588235, 1 )
+
+[node name="ApplePanel" type="Panel"]
+margin_left = 58.9315
+margin_top = 248.003
+margin_right = 98.9315
+margin_bottom = 288.003
+rect_scale = Vector2( 4.15037, 3.18999 )
+custom_styles/panel = SubResource( 2 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AppleLabel" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+rect_scale = Vector2( 0.277294, 0.420045 )
+custom_fonts/font = ExtResource( 1 )
+text = "Apples"
+__meta__ = {
+"_edit_use_anchors_": false
+}
