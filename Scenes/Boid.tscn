@@ -5,8 +5,6 @@
 [ext_resource path="res://SFX/Chuckle.wav" type="AudioStream" id=3]
 [ext_resource path="res://Scripts/Squawk.gd" type="Script" id=4]
 
-
-
 [sub_resource type="CylinderShape" id=1]
 
 [sub_resource type="SpatialMaterial" id=2]
@@ -19,6 +17,9 @@ material = SubResource( 2 )
 [node name="BOID BODY" type="KinematicBody"]
 transform = Transform( 0.3, 0, 0, 0, 0.417577, 0, 0, 0, 0.3, 0, 0, 0 )
 script = ExtResource( 2 )
+__meta__ = {
+"_editor_description_": "https://docs.godotengine.org/en/stable/getting_started/step_by_step/signals.html"
+}
 
 [node name="BOID COLLIDER" type="CollisionShape" parent="."]
 shape = SubResource( 1 )
