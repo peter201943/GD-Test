@@ -18,7 +18,7 @@ material = SubResource( 2 )
 transform = Transform( 0.3, 0, 0, 0, 0.417577, 0, 0, 0, 0.3, 0, 0, 0 )
 script = ExtResource( 2 )
 __meta__ = {
-"_editor_description_": "https://docs.godotengine.org/en/stable/getting_started/step_by_step/signals.html"
+"_editor_description_": ""
 }
 
 [node name="BOID COLLIDER" type="CollisionShape" parent="."]

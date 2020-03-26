@@ -1,20 +1,26 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Misc/Font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Scenes/ApplePanel.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/Pear.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/OrangePanel1.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/OrangePanel2.gd" type="Script" id=5]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.0431373, 0.541176, 0, 1 )
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.670588, 0.964706, 0.0941176, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.929412, 0.52549, 0.0509804, 1 )
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": false,
+"_editor_description_": "https://docs.godotengine.org/en/stable/getting_started/step_by_step/signals.html"
 }
 
 [node name="ScreenBack" type="Panel" parent="."]
@@ -65,8 +71,11 @@ margin_top = 246.775
 margin_right = 743.494
 margin_bottom = 286.775
 rect_scale = Vector2( 4.15037, 3.18999 )
-custom_styles/panel = SubResource( 3 )
+custom_styles/panel = SubResource( 2 )
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="PearLabel" type="Label" parent="PearPanel"]
 margin_right = 40.0
@@ -75,6 +84,52 @@ rect_scale = Vector2( 0.35421, 0.34481 )
 custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Pears"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OrangePanel1" type="Panel" parent="."]
+margin_left = 282.38
+margin_top = 248.003
+margin_right = 322.38
+margin_bottom = 288.003
+rect_scale = Vector2( 4.15037, 3.18999 )
+custom_styles/panel = SubResource( 3 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OrangeLabel" type="Label" parent="OrangePanel1"]
+margin_right = 40.0
+margin_bottom = 14.0
+rect_scale = Vector2( 0.319647, 0.34481 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Oranges"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OrangePanel2" type="Panel" parent="."]
+margin_left = 493.551
+margin_top = 246.775
+margin_right = 533.551
+margin_bottom = 286.775
+rect_scale = Vector2( 4.15037, 3.18999 )
+custom_styles/panel = SubResource( 3 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OrangeLabel" type="Label" parent="OrangePanel2"]
+margin_right = 40.0
+margin_bottom = 14.0
+rect_scale = Vector2( 0.319647, 0.34481 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Oranges"
 __meta__ = {
 "_edit_use_anchors_": false
 }
